@@ -22,6 +22,19 @@ footer {
   transition: all .5s;
 }
 
+.card h2{
+  text-align: center;
+}
+
+.card img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+ul{
+  align-content: flex-end;
+}
 .card:hover {
   border-color: #ffbf80;
 }
@@ -112,6 +125,15 @@ div p {
   }
 }
 
+.card-deck{
+  justify-content: center;
+}
+.card {
+  justify-content: center;
+  min-width: 180px;
+  align-items: center;
+  
+}
 
 /*Photo css*/
 
