@@ -23,4 +23,11 @@ $('document').ready(function(){
       }
   }, 5000); 
 
+  $('a.nav-item').not('first').on( 'click', function(){
+  var offSet = 66;
+    $('body').animate( {
+      scrollTop: $( $(this).attr('href') ).offset().top - offSet + 'px'
+    }, 250);
+  });
+
 });
