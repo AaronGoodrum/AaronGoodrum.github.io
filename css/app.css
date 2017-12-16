@@ -4,14 +4,53 @@ body {
   height:100%;
   width:100%;
   scroll-behavior: smooth;
+  background: #1FA2FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
-footer {
-  margin:10px;
-  background-color: #EE6352;
+#slideshow {
+  margin: auto;
+  position: relative;
+  width: auto;
+  height: 750px;
 }
+
+#slideshow > div {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+}
+
+.triangle-down {
+  float: left;
+  margin-right:5%;
+  width: 0px;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 40px solid #FFEB3B;
+  z-index: -1;
+}
+
+/* Page-main */
+#HOME{
+  background: #1FA2FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 5px;
+}
+/* page-work */
+.page-work{
+  background-color: #12D8FA;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  }
 
 .card {
+  align-items: center;
+  justify-content: center;
   margin: 5px;
   padding: 5px 10px 10px;
   max-width: 500px;
@@ -20,6 +59,10 @@ footer {
   border-bottom: 4px solid #ccc;
   border-radius: 6px;
   transition: all .5s;
+}
+
+.card-deck{
+  justify-content: center;
 }
 
 .card h2{
@@ -39,31 +82,22 @@ ul{
   border-color: #ffbf80;
 }
 
+/* page-about */
+.page-about {
+padding-bottom: 2em;
+}
+
+#ABOUT{
+  padding-top: 1em;
+  background: #1FA2FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
 .badges{
   height: 3em;
   padding: 5px 5px;
-}
-
-
-.page-work{
-background-color: rgb(61, 192, 177);
-padding-top: 10px;
-padding-bottom: 20px;
-}
-
-.triangle-down {
-  float: left;
-  margin-right:5%;
-  width: 0;
-  height: 0;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-top: 40px solid yellow;
-  z-index: -1;
-}
-
-.page-about {
-padding-bottom: 2em;
 }
 
 .techBadges{
@@ -76,12 +110,6 @@ padding-bottom: 2em;
 }
 .techBadges:hover {
   background-color: #ECECE2;
-}
-
-#ABOUT{
-  margin-top: 1em;
-  padding-top: 1em;
-  background-color: rgb(44, 150, 232);;
 }
 
 /*SVG add color on hover*/
@@ -101,9 +129,10 @@ padding-bottom: 2em;
 
 @media only screen and (min-width: 540px){
 /*For Non Mobile*/
-div p {
-  max-width: 660px;
-}
+  div p {
+    max-width: 660px;
+  }
+
   #headProfile{
     max-width: 300px;
     max-height: 400px;
@@ -116,64 +145,54 @@ div p {
     height: 0;
     border-left: 40px solid transparent;
     border-right: 40px solid transparent;
-    border-top: 40px solid red;
+    border-top: 40px solid #F44336;
     z-index: -1;
   }
 
   .badges{
     padding: 0 2em;
   }
-}
 
-.card-deck{
-  justify-content: center;
-}
-.card {
-  justify-content: center;
-  min-width: 180px;
-  align-items: center;
-  
-}
+  /*Photo css*/
 
-/*Photo css*/
-
-#photos li {
-  margin: 30px 0 0;
-  vertical-align: middle;
-}
-#photos li:before {
-  display: none;
-}
-#photos .image {
-  display: block;
-  min-height: 140px;
-  background: #edeff0;
-  text-align: center;
-  height: 160px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-#photos .image:hover {
-  background: #dfe3e4;
-}
-#photos .image:before {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-#photos img {
-  max-width: 80%;
-  max-height: 200px;
-  vertical-align: middle;
-  -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  #photos li {
+    margin: 30px 0 0;
+    vertical-align: middle;
+  }
+  #photos li:before {
+    display: none;
+  }
+  #photos .image {
+    display: block;
+    min-height: 140px;
+    background: #edeff0;
+    text-align: center;
+    height: 160px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+  #photos .image:hover {
+    background: #dfe3e4;
+  }
+  #photos .image:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  #photos img {
+    max-width: 80%;
+    max-height: 200px;
+    vertical-align: middle;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  }
 }
